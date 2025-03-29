@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;   
+}
+html{
+   font-size: 62.5%; 
+}
+/*CLASSES GENERALIZADA*/
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reset-style{
+    border: none;
+    background: transparent;
+    height: 100%;
+}
+
+
+.info-desc{
+    font-family: "Nunito-Sans" , sans-serif ;
+    font-weight: 700;
+    color: #fff;
+    background: #005CFF;
+    min-height:3rem;
+    text-align: center;
+    font-size:1.4rem;
+    line-height: 3rem;
+    padding: 4px;
+}
+header{
+    flex-direction: column;
+    font-family: "Nunito-Sans" , sans-serif ;
+    font-size: 1.4rem;
+    width: 100%;
+}
+/*REGIÃO SUPERRIO HEADER*/
+.top-header{
+    position: relative;
+    display: flex;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.top-header .logo{
+    width: 15rem;
+    position: absolute;
+    width: 15rem;
+    top: 50%;
+    left: 0%;
+    transform: translatey(-50%);
+}
+.top-header .search-input{
+    position: relative;
+    width: 60rem;
+    display: flex;
+    margin-left: 20rem;
+}
+.top-header .search-input > input{
+    width: 100%;
+    height: 4rem;
+    border: 1px #ddd solid;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #000;
+    padding-left: 2rem;
+}
+.search-input > input::placeholder{
+    color: #000;
+}
+.top-header .search-btn{
+    margin-left: -3rem;
+}
+.top-header #menu-btn{
+    display: none;
+    background: transparent;
+    border: none;
+}
+.top-header .info-client{
+    margin-left: 20rem;
+    display: flex;
+}
+.info-client #cart-count{
+    width: 21px;
+    height: 22px;
+    position: absolute;
+    padding: 1px;
+    top: -5px;
+    right:-9px;
+    background: #005CFF;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 100%;
+    font-family: "Nunito";
+}
+.info-client  p{
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 4px;
+    margin-right: 12px;
+}
+.top-header #user-btn{
+    border: none;
+    background: transparent;
+}
+/*REGIÃO INFERIOR HEADER*/
+.bottom-header{
+    display: flex;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.bottom-header #categorias-btn{
+    font-weight: 700;
+    margin-right: 6.1rem;
+}
+.bottom-header .categorias-list{
+    list-style: none;
+    display: flex;
+    gap: 5.3rem;
+    font-weight: 400;
+}
+.bottom-header .categorias-list a{
+    color: #000;
+    text-decoration: none;
+}
+.hero-banner{
+    width: 100%;
+    height: 50rem;
+    background: #e7e7ea;
+}
+.hero-banner .left-banner{
+    height: 100%;
+    width: 68.5rem;
+    border: 2px black solid;
+}
+
+
+
+/*MOBILE*/
+@media screen and (width<=390px){
+
+header{
+    position: relative;
+    height: 13rem;
+    align-items: start !important;;
+    margin-top: 0;
+}
+/*REGIÃO SUPERRIO HEADER*/
+.top-header{
+    margin-top: -2.5rem;
+}
+.top-header .logo{
+    left: 25%;
+    transform: translatey(-50%);
+}
+.top-header .search-input{
+    width: 30rem;
+    position: relative;
+    top: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.top-header .info-client{
+    margin-left: 0rem;
+    transform: translateX(-100%);
+}
+.top-header #menu-btn{
+    display: block;
+}
+#user-btn{
+    display: none;
+}
+.info-client p {
+    display: none;
+}
+#menu-btn{
+    transform: translateX(100%);
+}
+/*REGIÃO INFERIOR HEADER*/
+.bottom-header{
+    display: none;
+}
+
+}
+
+
+@media screen and (width<=768px){
+
+    header{
+        position: relative;
+        height: 13rem;
+        align-items: start !important;;
+        margin-top: 0;
+    }
+    /*REGIÃO SUPERRIO HEADER*/
+    .top-header{
+        margin-top: -2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .top-header .logo{
+        left: 25%;
+        transform: translatey(-50%);
+    }
+    .top-header .search-input{
+        width: 30rem;
+        position: relative;
+        top: 5rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .top-header .info-client{
+        margin-left: 0rem;
+        transform: translateX(-100%);
+    }
+    .top-header #menu-btn{
+        display: block;
+    }
+    #user-btn{
+        display: none;
+    }
+    .info-client p {
+        display: none;
+    }
+    #menu-btn{
+        transform: translateX(100%);
+    }
+    /*REGIÃO INFERIOR HEADER*/
+    .bottom-header{
+        display: none;
+    }
+    
+}
+
+
+@media screen and (width<=480px){
+
+}
+
+
+@media screen and (width> 480px) and (width<=768px){
+header{
+    position: relative;
+    height: 13rem;
+    align-items: start !important;;
+    margin-top: 0;
+}
+/*REGIÃO SUPERRIO HEADER*/
+.top-header{
+    margin-top: -2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.top-header .search-input{
+    width: 70rem;
+
+}
+}
+
