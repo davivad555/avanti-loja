@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avanti Store</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sty.css">
 </head>
 <body>
 <div class="info-desc"><p>Ganhe <Span style="background: #6220C1; padding: 4px; border-radius: 20%;">R$10,00</Span> de desconto no seu primeiro pedido. Utilize o cupom <span style="font-style: italic; font-weight: 400;">DESCONTO10</span></p></div>
@@ -12,12 +13,16 @@
     <section class="top-header">
         <button id="menu-btn"><img src="./assets/icones/menu.svg" alt=""></button>
         <span class="logo"><img src="./assets/images/logo.svg" alt=""></span>
-        <div class="search-input">
+        <div class="area-search">
             <input
+            id="search-input"
             type="search"
             placeholder="Digite o que você procura"
             >
-            <button class="search-btn reset-style"><img src="./assets/icones/search.svg" alt=""></button>
+            <div class="models">
+                <div class="results-search">Você buscou por: <span></span></div>
+            </div>
+            <button class="search-btn reset-style "><img src="./assets/icones/search.svg" alt=""></button>
         </div>
         <div class="info-client">
             <button class="reset-style" id="user-btn" >
@@ -38,13 +43,13 @@
         </button>
         <nav class="categorias">
             <ul class="categorias-list">
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
-            <li><a href="#">Departamento</a></li>
+            <li><h2>Ofertas do Dia</h2></li>
+            <li><h2>Promoções</h2></li>
+            <li><h2>Novidades</h2></li>
+            <li><h2>Mais Vendidos</h2></li>
+            <li><h2>Vender na Avanti</h2></li>
+            <li><h2>Cartao Avanti</h2></li>
+            <li><h2>Baixe o App</h2></li>
             </ul>
         </nav>
     </section>
@@ -94,7 +99,49 @@
         <div class="dots"></div>
         <div class="dots"></div>
     </div>
-    <section>....</section>
+    <section style="height: 10vh;">....</section>
+    <!--MENU SUPENSO-->
+    
+    <aside class="menu-desktop ">
+        <div class="container-departaments">
+            <ul class="departaments" id="departaments-desktop">
+                <!--<li><h2>Departamento</h2></li>-->
+            </ul>
+                <div class="container-categoria">
+                    <div class="categoria">
+                        <!--<h2>Categoria</h2>
+                        <h3>Categoria</h3>-->
+                    </div>
+                </div>
+        </div> 
+        <img src="./assets/images/Mockup-2.png" alt="">
+
+    </aside > 
+    <aside class="menu-mobile ">
+        <ul class="departaments">
+            <div class=".models ">
+                <li id="li-departaments">
+                    <!--<h2>Departamento</h2>-->
+                    <div class="models">
+                        <div class="container-categoria">
+                            
+                                <div class="categoria">
+                                    <!--<h2>Categoria </h2>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>
+                                    <h3>Categoria</h3>-->
+                                </div>
+                                
+                        </div>
+                    </div>    
+                </li>
+            </div>    
+        </ul>
+    </aside>
 </main>
 <script src="./js/Script.js" type="module"></script>
 </body>

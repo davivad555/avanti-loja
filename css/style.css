@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +24,10 @@ body{
     background: transparent;
     height: 100%;
 }
-
+.no-show{
+    display: none !important;
+}
+.models{display: none;}
 
 .info-desc {
     font-family: "Nunito-Sans", sans-serif;
@@ -63,14 +65,14 @@ header {
     transform: translatey(-50%);
 }
 
-.top-header .search-input {
+.top-header .area-search {
     position: relative;
     width: 60rem;
     display: flex;
     margin-left: 20rem;
 }
 
-.top-header .search-input>input {
+.top-header .area-search>#search-input {
     width: 100%;
     height: 4rem;
     border: 1px #ddd solid;
@@ -79,9 +81,30 @@ header {
     color: #000;
     padding-left: 2rem;
 }
-
-.search-input>input::placeholder {
+.area-search>#search-input:focus {
+    outline: none;
+}
+.area-search>#search-input::placeholder {
     color: #000;
+}
+.results-search{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 6rem;
+    top: 4.5rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color:#838383;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px #999, -1px -1px 2px #eee;
+    z-index: 999;
+}
+.results-search>span{
+    color: black;
 }
 
 .top-header .search-btn {
@@ -126,17 +149,17 @@ header {
     border: none;
     background: transparent;
 }
-
-/*REGIÃO INFERIOR HEADER*/
 .bottom-header {
     display: flex;
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
+    align-items: end;
 }
 
 .bottom-header #categorias-btn {
     font-weight: 700;
     margin-right: 6.1rem;
+    
 }
 
 .bottom-header .categorias-list {
@@ -145,10 +168,11 @@ header {
     gap: 5.3rem;
     font-weight: 400;
 }
+/*BANNER SLIDE*/
 
-.bottom-header .categorias-list a {
+.bottom-header .categorias-list  h2{
+    font-weight: 400;  
     color: #000;
-    text-decoration: none;
 }
 .slide-hero{
     width: 300vw;
@@ -212,18 +236,105 @@ header {
     height: 0.7rem;
     background: #838383;
     border-radius: 1rem;
-    z-index: 999;
+    z-index: 998;
 }
 .dot-checked{
     background: #303030 !important; 
 }
+
+/*MENU SUSPENSO DESKTOP*/
+.menu-desktop{
+    position: absolute;
+    gap: 15%;
+    font-family: nunito sans;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    min-height: 33rem;
+    width: 120rem;
+    padding: 2rem;
+    background: #fff;
+  
+}
+.menu-desktop .container-departaments{
+    display: flex;
+    width: 75rem;
+    height: 100%;
+}
+.container-departaments >.departaments{
+    width: 23rem;
+    display: inline;
+    list-style: none;
+}
+.departaments li{
+    display: flex;
+    color: #303030;
+    position: relative;
+    width: 105%;
+}
+.departaments li>h2{
+    font-weight: 400;
+    width: 100%;
+}
+.departaments li>h2:hover{
+    font-weight: 700;
+    color: #005CFF;
+}
+.departaments li >h2::after{
+    content: url("../assets/icones/arrow-simples.svg");
+    position: absolute;
+    right: -2rem;
+    align-content: end;
+    font-weight: 700;
+    filter: grayscale(2);
+}
+.departaments li >h2:hover::after{
+    filter: grayscale(0);
+}
+.menu-desktop img{
+    aspect-ratio: 23/30;
+    width: 230px;
+    border-radius: 10px;
+}
+.container-categoria{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    font-weight: 300;
+    color: #656565;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+.container-categoria .categoria{
+    margin-left: auto;
+    margin-right: auto;
+}
+.categoria h3, h2{
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.categoria>h2{
+    font-weight: 700;
+    color: #005CFF;
+    text-align: center;
+}
+.categoria h3:hover{
+    text-decoration: underline;
+}
+
+/*MENU MOBILE*/
+.menu-mobile{
+    display: none;
+}
+
 
 
 
 
 /*MOBILE SMARTPHONE*/
 @media screen and (width<=480px) {
-
+    /*HEADER BARRA*/
     header {
         position: relative;
         height: 13rem;
@@ -240,13 +351,17 @@ header {
         transform: translatey(-50%);
     }
 
-    .top-header .search-input {
+    .top-header .area-search {
         width: 100%;
         min-width: 28rem;
         position: relative;
         top: 5rem;
         margin-right: auto;
         margin-left: auto;
+    }
+    .results-search{
+        height: 4rem;
+        font-size: 1.6rem;
     }
     .top-header .info-client {
         margin-left: 0rem;
@@ -265,9 +380,9 @@ header {
     #menu-btn {
         transform: translateX(100%);
     }
-
+    /*BANNER SLIDE*/
     .hero-banner {
-        overflow-x: hidden;
+        overflow: hidden;
         height: 30rem;
     }
 
@@ -296,19 +411,77 @@ header {
     .right-banner h2:nth-last-child(1) {
         font-size: 3.2rem;
     }
+        /*MENU SUSPENSO OCULTO*/
+    .menu-desktop{
+        display: none;
+    }
+    .menu-mobile{
+        display: block;
+        font-family: nunito sans;
+        font-size: 4rem;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 13rem;
+        margin-left: -100vw;
+        background: #fff;
+        overflow-y: scroll;
+        z-index: 999;
+        transition: 1s;
+    }
+    .move-left{
+        margin-left: 0vw;
+    }
+    .menu-mobile > .departaments{
+        width: 90%;
+        margin-left: 0.4rem;
+        border-bottom: 2px #656565 solid;
+        border-radius: 5px;
+    }
+    .menu-mobile > .departaments li{
+        flex-direction: column;
+        background: white;
+    }
+    .departaments > li >h2{
+        font-size: 2rem;
+        font-weight: 500;
+        align-content: end;
+    }
+    .departaments > li h2::after{
+        margin-left: 0rem;
+        margin-right: 3rem;
+        transform: scale(1.4);
+        rotate: var(--rotate, 90deg);
+        font-weight: 700;
+        color: #005CFF;
+    }
+    .container-categoria{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 2rem;
+        display: grid;
+        font-weight: 300;
+        color: #656565;
+        border-bottom: 2px #656565 solid;
+        border-radius: 5px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .categoria{
+        width: 100%;
+    }
 }
 
 
 
-@media screen and (width> 480px) and (width<=768px) {
+
+@media screen and (width> 480px) and (width<=800px) {
+    /*HEADER BARRA*/
     header {
         position: relative;
         height: 13rem;
         align-items: start !important;
         margin-top: 0;
     }
-
-    /*REGIÃO SUPERRIO HEADER*/
     .top-header {
         margin-top: -2.5rem;
         margin-left: auto;
@@ -319,7 +492,7 @@ header {
         transform: translate(-40%,-50%);
     }
 
-    .top-header .search-input {
+    .top-header .area-search {
         width: 70rem;
         min-width: 28rem;
         position: relative;
@@ -346,6 +519,7 @@ header {
     .bottom-header {
         display: none;
     }
+    /*BANNER SLIDE*/
     .hero-banner {
         height: 30rem;
     }
@@ -373,4 +547,79 @@ header {
     .right-banner h2:nth-last-child(1) {
         font-size: 3.2rem;
     }
+        /*MENU SUSPENSO OCULTO*/
+    .menu-desktop{
+        display: none;
+    }
+
+
+    /*MENU MOBILE*/
+    .menu-mobile{
+        display: block;
+        font-family: nunito sans;
+        font-size: 4rem;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 10rem;
+        background: #fff;
+        overflow-y: scroll;
+        z-index: 999;
+    }
+    .menu-mobile > .departaments{
+        width: 90%;
+        margin-left: 0.4rem;
+        border-bottom: 2px #656565 solid;
+        border-radius: 5px;
+    }
+    .menu-mobile > .departaments li{
+        flex-direction: column;
+        background: white;
+    }
+    .departaments > li >h2{
+        font-size: 2rem;
+        font-weight: 500;
+        align-content: end;
+    }
+    .departaments > li h2::after{
+        margin-left: 1rem;
+        transform: scale(1.4);
+        rotate: -90deg;
+        font-weight: 700;
+        color: #005CFF;
+    }
+    .container-categoria{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 2rem;
+        display: grid;
+        font-weight: 300;
+        color: #656565;
+        border-bottom: 2px #656565 solid;
+        border-radius: 5px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .categoria{
+        width: 100%;
+    }
 }
+
+@media screen and (width>800px) and (width<=1280px){
+    /*MENU SUSPENSO*/
+    .menu-desktop{
+        top: 14rem;
+        left: 6rem;
+        width: 120rem;
+    }
+}
+@media screen and (width>1280px){
+    /*MENU SUSPENSO*/
+    .menu-desktop{
+        top: 14rem;
+        left: 9rem;
+        width: 120rem;
+    }
+}
+
+
+
